@@ -14,10 +14,17 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
+            font-family: Arial, Helvetica, sans-serif;
             background: #f5f7fb;
             color: #1f2937;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
+
+        /* =========================
+           HEADER
+        ========================== */
 
         header {
             background: #111827;
@@ -26,64 +33,102 @@
         }
 
         header h1 {
-            font-size: 28px;
+            font-size: 30px;
+            font-weight: 700;
         }
 
         header p {
             margin-top: 8px;
             color: #cbd5e1;
+            font-size: 16px;
         }
 
+        /* =========================
+           MAIN CONTENT
+        ========================== */
+
         main {
+            width: 100%;
             max-width: 1100px;
             margin: 50px auto;
             padding: 0 25px;
+            flex: 1;
         }
+
+        /* =========================
+           HERO SECTION
+        ========================== */
 
         .hero {
             background: white;
             padding: 40px;
             border-radius: 16px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            margin-bottom: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            margin-bottom: 35px;
         }
 
         .hero h2 {
             font-size: 32px;
-            margin-bottom: 12px;
+            margin-bottom: 14px;
+            color: #111827;
         }
 
         .hero p {
             color: #64748b;
             line-height: 1.7;
+            font-size: 16px;
         }
+
+        /* =========================
+           API CARDS
+        ========================== */
 
         .api-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(
+                auto-fit,
+                minmax(280px, 1fr)
+            );
+            gap: 22px;
         }
 
         .card {
             background: white;
-            padding: 25px;
+            padding: 28px;
             border-radius: 14px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
         }
 
         .card h3 {
-            margin-bottom: 15px;
+            margin-bottom: 18px;
+            font-size: 20px;
+            color: #111827;
         }
+
+        .card p {
+            line-height: 1.6;
+            color: #475569;
+        }
+
+        /* =========================
+           API ENDPOINTS
+        ========================== */
 
         .endpoint {
             display: block;
             background: #f1f5f9;
-            padding: 12px;
-            margin: 8px 0;
+            padding: 14px;
+            margin: 10px 0;
             border-radius: 8px;
             color: #2563eb;
             text-decoration: none;
             font-family: monospace;
+            transition: 0.2s ease;
+        }
+
+        .endpoint:hover {
+            background: #e2e8f0;
+            transform: translateX(3px);
         }
 
         .method {
@@ -97,79 +142,286 @@
             margin-right: 8px;
         }
 
+        /* =========================
+           FOOTER
+        ========================== */
+
         footer {
             text-align: center;
-            padding: 30px;
+            padding: 30px 20px;
             color: #64748b;
+            line-height: 1.8;
+        }
+
+        .github-link {
+            margin-top: 10px;
+        }
+
+        .github-link a {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+
+            color: #111827;
+            text-decoration: none;
+
+            font-size: 15px;
+            font-weight: 600;
+
+            transition: 0.2s ease;
+        }
+
+        .github-link a:hover {
+            color: #2563eb;
+            transform: translateY(-1px);
+        }
+
+        /* GitHub SVG */
+
+        .github-icon {
+            width: 19px;
+            height: 19px;
+            fill: currentColor;
+        }
+
+        /* =========================
+           MOBILE
+        ========================== */
+
+        @media (max-width: 600px) {
+
+            header {
+                padding: 22px 6%;
+            }
+
+            header h1 {
+                font-size: 25px;
+            }
+
+            header p {
+                font-size: 14px;
+            }
+
+            main {
+                margin: 30px auto;
+                padding: 0 18px;
+            }
+
+            .hero {
+                padding: 28px;
+            }
+
+            .hero h2 {
+                font-size: 26px;
+            }
+
+            .hero p {
+                font-size: 15px;
+            }
+
+            .card {
+                padding: 24px;
+            }
         }
     </style>
 </head>
 
 <body>
 
-<header>
-    <h1>🚀 Workshop API</h1>
-    <p>REST API Testing Environment</p>
-</header>
+    <!-- =========================
+         HEADER
+    ========================== -->
 
-<main>
+    <header>
 
-    <section class="hero">
-        <h2>Welcome to Workshop API</h2>
+        <h1>🚀 Workshop API</h1>
 
         <p>
-            This API was built for educational purposes to demonstrate
-            REST API concepts, HTTP methods, CRUD operations and API
-            testing using Postman.
+            REST API Testing Environment
         </p>
-    </section>
 
-    <section class="api-grid">
+    </header>
 
-        <div class="card">
-            <h3>👨‍🎓 Students API</h3>
 
-            <a class="endpoint" href="/students">
-                <span class="method">GET</span>
-                /students
-            </a>
+    <!-- =========================
+         MAIN
+    ========================== -->
 
-            <a class="endpoint" href="/students/1">
-                <span class="method">GET</span>
-                /students/1
-            </a>
-        </div>
+    <main>
 
-        <div class="card">
-            <h3>🛒 Products API</h3>
+        <!-- HERO -->
 
-            <a class="endpoint" href="/products">
-                <span class="method">GET</span>
-                /products
-            </a>
+        <section class="hero">
 
-            <a class="endpoint" href="/products/1">
-                <span class="method">GET</span>
-                /products/1
-            </a>
-        </div>
-
-        <div class="card">
-            <h3>🧪 API Testing</h3>
+            <h2>
+                Welcome to Workshop API
+            </h2>
 
             <p>
-                Use Postman to test GET, POST, PUT, PATCH and DELETE
-                requests.
+                This API was built for educational purposes to
+                demonstrate REST API concepts, HTTP methods,
+                CRUD operations and API testing using Postman.
             </p>
+
+        </section>
+
+
+        <!-- API CARDS -->
+
+        <section class="api-grid">
+
+
+            <!-- STUDENTS API -->
+
+            <div class="card">
+
+                <h3>
+                    👨‍🎓 Students API
+                </h3>
+
+                <a
+                    class="endpoint"
+                    href="/students"
+                >
+                    <span class="method">
+                        GET
+                    </span>
+
+                    /students
+                </a>
+
+
+                <a
+                    class="endpoint"
+                    href="/students/1"
+                >
+                    <span class="method">
+                        GET
+                    </span>
+
+                    /students/1
+                </a>
+
+            </div>
+
+
+            <!-- PRODUCTS API -->
+
+            <div class="card">
+
+                <h3>
+                    🛒 Products API
+                </h3>
+
+
+                <a
+                    class="endpoint"
+                    href="/products"
+                >
+                    <span class="method">
+                        GET
+                    </span>
+
+                    /products
+                </a>
+
+
+                <a
+                    class="endpoint"
+                    href="/products/1"
+                >
+                    <span class="method">
+                        GET
+                    </span>
+
+                    /products/1
+                </a>
+
+            </div>
+
+
+            <!-- API TESTING -->
+
+            <div class="card">
+
+                <h3>
+                    🧪 API Testing
+                </h3>
+
+                <p>
+                    Use Postman to test
+                    GET, POST, PUT, PATCH
+                    and DELETE requests.
+                </p>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <div>
+            Built for API Testing Workshop
         </div>
 
-    </section>
 
-</main>
+        <div class="github-link">
 
-<footer>
-    Built for API Testing Workshop
-</footer>
+            <a
+                href="https://github.com/jana-2110/workshop-api"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Open GitHub profile"
+            >
+
+                <!-- GitHub Icon -->
+
+                <svg
+                    class="github-icon"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                >
+
+                    <path
+                        d="M12 .5C5.65.5.5 5.65.5 12c0 5.09
+                        3.29 9.4 7.86 10.93.57.1.78-.25.78-.55
+                        0-.27-.01-1-.02-1.96-3.2.7-3.88-1.54
+                        -3.88-1.54-.52-1.33-1.28-1.68-1.28-1.68
+                        -1.04-.71.08-.7.08-.7 1.15.08
+                        1.76 1.18 1.76 1.18 1.02 1.75
+                        2.67 1.24 3.32.95.1-.74.4-1.24
+                        .73-1.53-2.55-.29-5.23-1.28-5.23-5.7
+                        0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46
+                        .11-3.04 0 0 .96-.31 3.15 1.18a10.9
+                        10.9 0 0 1 5.74 0c2.19-1.49
+                        3.15-1.18 3.15-1.18.62 1.58.23
+                        2.75.11 3.04.73.81 1.18 1.84
+                        1.18 3.1 0 4.43-2.69 5.41-5.25
+                        5.69.41.35.78 1.04.78 2.1 0
+                        1.52-.01 2.74-.01 3.11 0
+                        .3.21.66.79.55A11.51 11.51 0 0 0
+                        23.5 12C23.5 5.65 18.35.5 12 .5Z"
+                    />
+
+                </svg>
+
+                <span>
+                    GitHub
+                </span>
+
+            </a>
+
+        </div>
+
+    </footer>
 
 </body>
 </html>
