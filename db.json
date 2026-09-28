@@ -1,0 +1,28 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "name": "Arun",
+      "department": "CSE",
+      "year": 3
+    },
+    {
+      "id": 2,
+      "name": "Priya",
+      "department": "ECE",
+      "year": 2
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Laptop",
+      "price": 50000
+    },
+    {
+      "id": 2,
+      "name": "Mouse",
+      "price": 800
+    }
+  ]
+}
