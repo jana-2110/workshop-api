@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Workshop API</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f7fb;
+            color: #1f2937;
+        }
+
+        header {
+            background: #111827;
+            color: white;
+            padding: 25px 8%;
+        }
+
+        header h1 {
+            font-size: 28px;
+        }
+
+        header p {
+            margin-top: 8px;
+            color: #cbd5e1;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 0 25px;
+        }
+
+        .hero {
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            margin-bottom: 30px;
+        }
+
+        .hero h2 {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .hero p {
+            color: #64748b;
+            line-height: 1.7;
+        }
+
+        .api-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 14px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+        }
+
+        .card h3 {
+            margin-bottom: 15px;
+        }
+
+        .endpoint {
+            display: block;
+            background: #f1f5f9;
+            padding: 12px;
+            margin: 8px 0;
+            border-radius: 8px;
+            color: #2563eb;
+            text-decoration: none;
+            font-family: monospace;
+        }
+
+        .method {
+            display: inline-block;
+            background: #dcfce7;
+            color: #166534;
+            padding: 5px 9px;
+            border-radius: 5px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #64748b;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>🚀 Workshop API</h1>
+    <p>REST API Testing Environment</p>
+</header>
+
+<main>
+
+    <section class="hero">
+        <h2>Welcome to Workshop API</h2>
+
+        <p>
+            This API was built for educational purposes to demonstrate
+            REST API concepts, HTTP methods, CRUD operations and API
+            testing using Postman.
+        </p>
+    </section>
+
+    <section class="api-grid">
+
+        <div class="card">
+            <h3>👨‍🎓 Students API</h3>
+
+            <a class="endpoint" href="/students">
+                <span class="method">GET</span>
+                /students
+            </a>
+
+            <a class="endpoint" href="/students/1">
+                <span class="method">GET</span>
+                /students/1
+            </a>
+        </div>
+
+        <div class="card">
+            <h3>🛒 Products API</h3>
+
+            <a class="endpoint" href="/products">
+                <span class="method">GET</span>
+                /products
+            </a>
+
+            <a class="endpoint" href="/products/1">
+                <span class="method">GET</span>
+                /products/1
+            </a>
+        </div>
+
+        <div class="card">
+            <h3>🧪 API Testing</h3>
+
+            <p>
+                Use Postman to test GET, POST, PUT, PATCH and DELETE
+                requests.
+            </p>
+        </div>
+
+    </section>
+
+</main>
+
+<footer>
+    Built for API Testing Workshop
+</footer>
+
+</body>
+</html>
